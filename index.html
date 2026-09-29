@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWYNEX | Smart Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="brand">
+            <div class="brand-icon">S</div>
+            <div>
+                <h2>SWYNEX</h2>
+                <span>Smart Task Manager</span>
+            </div>
+        </div>
+
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            Productivity Mode
+        </div>
+    </nav>
+
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="small-title">WELCOME BACK 👋</p>
+                <h1>Organize. Focus. <span>Achieve.</span></h1>
+                <p class="subtitle">
+                    Manage your daily tasks and keep your productivity on track.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Dashboard -->
+
+        <section class="dashboard">
+
+            <div class="stat-card">
+                <div class="stat-icon">📋</div>
+                <div>
+                    <p>Total Tasks</p>
+                    <h2 id="totalCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div>
+                    <p>Active Tasks</p>
+                    <h2 id="activeCount">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div>
+                    <p>Completed</p>
+                    <h2 id="completedCount">0</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Add Task -->
+
+        <section class="card add-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="label">CREATE NEW</p>
+                    <h2>Add a New Task</h2>
+                </div>
+                <span class="plus-icon">+</span>
+            </div>
+
+            <form id="taskForm">
+
+                <div class="input-group full">
+                    <label for="taskInput">Task Name</label>
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="e.g. Complete JavaScript assignment"
+                    >
+
+                    <small id="taskError"></small>
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="input-group">
+                        <label for="priority">Priority</label>
+
+                        <select id="priority">
+                            <option value="Low">Low Priority</option>
+                            <option value="Medium" selected>Medium Priority</option>
+                            <option value="High">High Priority</option>
+                        </select>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="category">Category</label>
+
+                        <select id="category">
+                            <option value="Study">📚 Study</option>
+                            <option value="Work">💼 Work</option>
+                            <option value="Personal">🏠 Personal</option>
+                            <option value="Project">💻 Project</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="add-btn">
+                    <span>+</span> Add Task
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Tasks -->
+
+        <section class="card task-section">
+
+            <div class="task-heading">
+
+                <div>
+                    <p class="label">YOUR WORKSPACE</p>
+                    <h2>My Tasks</h2>
+                </div>
+
+                <div class="task-counter" id="taskCount">
+                    0 tasks
+                </div>
+
+            </div>
+
+
+            <div class="controls">
+
+                <div class="search-box">
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search tasks..."
+                    >
+                </div>
+
+
+                <select id="filterSelect">
+                    <option value="all">All Tasks</option>
+                    <option value="active">Active</option>
+                    <option value="completed">Completed</option>
+                </select>
+
+            </div>
+
+
+            <div id="taskList" class="task-list"></div>
+
+
+            <div id="emptyMessage" class="empty-message">
+                <div class="empty-icon">✨</div>
+                <h3>No tasks found</h3>
+                <p>Add a new task and start being productive.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Built with HTML • CSS • JavaScript</p>
+        <p>SWYNEX Frontend Developer Internship — Task 2</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
